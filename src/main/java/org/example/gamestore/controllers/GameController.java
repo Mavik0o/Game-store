@@ -35,4 +35,8 @@ public class GameController {
     public GameResponseDto getById(@PathVariable Long id) {
         return gameService.findById(id);
     }
+//    @GetMapping
+//    public List<GameResponseDto> findAll(@RequestParam(required = false) String title) {
+//        return gameService.findAll(title);
+//    }
 }

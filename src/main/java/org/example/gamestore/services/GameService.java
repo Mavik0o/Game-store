@@ -25,6 +25,19 @@ public class GameService {
                 .map(this::mapToResponseDto)
                 .toList();
     }
+//    public List<GameResponseDto> findAll(String title) {
+//        List<Game> games;
+//
+//        if (title == null || title.isBlank()) {
+//            games = gameRepository.findAll();
+//        } else {
+//            games = gameRepository.findByTitleContainingIgnoreCase(title);
+//        }
+//
+//        return games.stream()
+//                .map(this::mapToResponseDto)
+//                .toList();
+//    }
 
     public GameResponseDto findById(Long id) {
         Game game = gameRepository.findById(id)
