@@ -1,7 +1,7 @@
 package org.example.gamestore.enums;
 
 public enum Platform {
-    Steam,
-    Gog,
-    EpicGames,
+    STEAM,
+    GOG,
+    EPIC_GAMES,
 }

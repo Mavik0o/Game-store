@@ -47,7 +47,7 @@ public class GameController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
-        GameRequestDto.delete(id);
+        gameService.delete(id);
     }
 
 }

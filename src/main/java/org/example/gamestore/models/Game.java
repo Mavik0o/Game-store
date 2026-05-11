@@ -20,6 +20,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 public class Game {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,19 +36,18 @@ public class Game {
     @ElementCollection(targetClass = Platform.class)
     @CollectionTable(name = "game_platforms", joinColumns = @JoinColumn(name = "game_id"))
     @Enumerated(EnumType.STRING)
-    @Column(name = "platform")
+    @Column(name = "platform", nullable = false)
     private Set<Platform> platforms = new HashSet<>();
 
     @ElementCollection(targetClass = Genre.class)
     @CollectionTable(name = "game_genres", joinColumns = @JoinColumn(name = "game_id"))
     @Enumerated(EnumType.STRING)
-    @Column(name = "genre")
+    @Column(name = "genre", nullable = false)
     private Set<Genre> genres = new HashSet<>();
 
     @ElementCollection(targetClass = Device.class)
     @CollectionTable(name = "game_devices", joinColumns = @JoinColumn(name = "game_id"))
     @Enumerated(EnumType.STRING)
-    @Column(name = "device")
+    @Column(name = "device", nullable = false)
     private Set<Device> devices = new HashSet<>();
-
 }

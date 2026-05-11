@@ -13,7 +13,6 @@ public interface GameMapper {
     GameResponseDto toDto(Game game);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "status", constant = "AVAILABLE")
     Game toEntity(GameRequestDto gameRequestDto);
     
 

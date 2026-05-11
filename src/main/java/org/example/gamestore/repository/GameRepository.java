@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.Optional;
 
 public interface GameRepository extends JpaRepository<Game, Long>, JpaSpecificationExecutor<Game> {
-    Optional<Game> findByNameIgnoreCase(String name);
-
+    Optional<Game> findByTitleIgnoreCase(String title);
 
 }

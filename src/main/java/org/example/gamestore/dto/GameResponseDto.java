@@ -8,10 +8,10 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 public record GameResponseDto (
-    Long id,
-    String title,
-    BigDecimal price,
-    Set<Platform> platforms,
-    Set<Genre> genres,
-    Set<Device> devices
+        Long id,
+        String title,
+        BigDecimal price,
+        Set<Platform> platforms,
+        Set<Genre> genres,
+        Set<Device> devices
     ) {}
