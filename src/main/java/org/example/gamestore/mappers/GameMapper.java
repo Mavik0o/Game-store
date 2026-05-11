@@ -15,6 +15,6 @@ public interface GameMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", constant = "AVAILABLE")
     Game toEntity(GameRequestDto gameRequestDto);
-
+    
 
 }
