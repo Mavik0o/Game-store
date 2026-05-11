@@ -10,10 +10,8 @@ package org.example.gamestore.controllers;
 //
 //        The code is covered with tests
 
-import jakarta.validation.Valid;
-import org.example.gamestore.dto.GameRequestDto;
 import org.example.gamestore.dto.GameResponseDto;
-import org.springframework.http.HttpStatus;
+import org.example.gamestore.services.GameService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,32 +20,19 @@ import java.util.List;
 @RequestMapping("/api/games")
 public class GameController {
 
+    private final GameService gameService;
+
+    public GameController(GameService gameService) {
+        this.gameService = gameService;
+    }
+
     @GetMapping
-    public List<> findAll(@Valid @ModelAttribute  ) {
-        return .findAll();
+    public List<GameResponseDto> findAll() {
+        return gameService.findAll();
     }
 
     @GetMapping("/{id}")
     public GameResponseDto getById(@PathVariable Long id) {
-        return GameService.findById(id);
+        return gameService.findById(id);
     }
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public GameResponseDto create(@RequestBody @Valid GameRequestDto requestDto) {
-        return GameService.create(requestDto);
-    }
-
-    @PutMapping("/{id}")
-    public GameResponseDto update(@PathVariable Long id,
-                                     @RequestBody @Valid GameRequestDto requestDto) {
-        return GameService.update(id, requestDto);
-    }
-
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
-        gameService.delete(id);
-    }
-
 }
